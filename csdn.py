@@ -1,5 +1,5 @@
 # coding: utf-8
-__author__ = 'zzg'
+__author__ = 'zhy'
 
 import requests
 from bs4 import BeautifulSoup
@@ -70,11 +70,9 @@ if __name__ == '__main__':
     while t < final:
         t += 1
         proxies = getProxyIp()  # 获取代理ip网站上的前12页的ip
-        # 为了爬取的代理ip不浪费循环5次使得第一次的不能访问的ip尽可能利用
         # print CONSTANT
         for i in range(5):
             i += 1
-            # 多进程代码开了32个进程
             pool = multiprocessing.Pool(processes=32)
             results = []
             for i in range(len(proxies)):
